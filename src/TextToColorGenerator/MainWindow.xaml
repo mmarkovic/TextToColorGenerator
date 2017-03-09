@@ -1,0 +1,24 @@
+﻿<Window
+    x:Class="TextToColorGenerator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TextToColorGenerator"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="525"
+    Height="350"
+    d:DataContext="{d:DesignInstance d:Type={x:Type local:MainViewModel}}"
+    mc:Ignorable="d">
+    <DockPanel>
+        <TextBox DockPanel.Dock="Top" Text="{Binding TextToConvert, UpdateSourceTrigger=PropertyChanged}" />
+        <Label
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="{Binding BackgroundColor}"
+            Content="{Binding TextToConvert}"
+            FontSize="25"
+            FontWeight="Bold"
+            Foreground="{Binding ForegroundColor}" />
+    </DockPanel>
+</Window>
